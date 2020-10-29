@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.ModifyPartInHouseMenuController">
+   <children>
+      <VBox layoutX="-1.0" layoutY="-2.0" prefHeight="600.0" prefWidth="500.0">
+         <children>
+            <HBox prefHeight="70.0" prefWidth="500.0">
+               <children>
+                  <Label minHeight="40.0" prefWidth="150.0" text="Modify Part">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="25.0" top="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <RadioButton mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" selected="true" text="In-House">
+                     <HBox.margin>
+                        <Insets left="35.0" top="22.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="addPartTG" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" onMouseClicked="#openModifyOutsourcedPartOnAction" prefHeight="26.0" prefWidth="100.0" text="Outsourced" toggleGroup="$addPartTG">
+                     <HBox.margin>
+                        <Insets left="15.0" top="22.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <HBox prefHeight="422.0" prefWidth="500.0">
+               <children>
+                  <VBox prefHeight="420.0" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets left="60.0" />
+                     </HBox.margin>
+                     <children>
+                        <Label prefHeight="70.0" prefWidth="150.0" text="ID">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="70.0" prefWidth="150.0" text="Name">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="80.0" prefHeight="70.0" prefWidth="150.0" text="Inv">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="150.0" prefHeight="70.0" prefWidth="150.0" text="Price/Cost">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="220.0" prefHeight="70.0" prefWidth="150.0" text="Max">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="290.0" prefHeight="70.0" prefWidth="150.0" text="Machine ID">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="420.0" prefWidth="258.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="idLbl" alignment="CENTER" prefHeight="60.0" prefWidth="170.0" style="-fx-background-size: 1; -fx-border-color: gray; -fx-border-radius: 5;" text="Label" />
+                        <TextField fx:id="nameTxt" layoutX="10.0" layoutY="15.0" maxWidth="170.0" onAction="#modifyInHouseNameTxt" prefHeight="60.0" promptText="Part Name" />
+                        <TextField fx:id="invTxt" layoutX="10.0" layoutY="75.0" maxWidth="170.0" onAction="#modifyInHouseInvTxt" prefHeight="60.0" promptText="Inv" />
+                        <TextField fx:id="priceTxt" layoutX="10.0" layoutY="135.0" maxWidth="170.0" onAction="#modifyInHousePriceTxt" prefHeight="60.0" promptText="Price/Cost" />
+                        <HBox prefHeight="60.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="maxTxt" onAction="#modifyInHouseMaxTxt" prefHeight="60.0" prefWidth="90.0" promptText="Max" />
+                              <Label prefHeight="60.0" text="Min">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="minTxt" onAction="#modifyInHouseMinTxt" prefHeight="60.0" prefWidth="90.0" promptText="Min">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <TextField fx:id="machTxt" layoutX="10.0" layoutY="225.0" maxWidth="170.0" onAction="#modifyInHouseMachineTxt" prefHeight="60.0" promptText="Mach ID" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="249.0" spacing="20.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onActionInHouseSave" prefHeight="50.0" prefWidth="97.0" text="Save">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="225.0" top="25.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onActionDisplayMainMenu" prefHeight="50.0" prefWidth="97.0" text="Cancel">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="25.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
